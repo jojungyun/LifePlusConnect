@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -32,7 +33,7 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
     private NaverMap naverMap;
     private Geocoder geocoder;
     EditText editText;
-    Button Button;
+    ImageButton imageButton;
     Marker marker = new Marker();
 
     @Override
@@ -41,7 +42,7 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
         setContentView(R.layout.activity_map);
 
         editText = findViewById(R.id.editText);
-        Button = findViewById(R.id.search);
+        imageButton = findViewById(R.id.search);
 
         //지도 사용권한을 받아옴
         locationSource = new FusedLocationSource(this, LOCATION_PERMISSION_REQUEST_CODE);
@@ -114,7 +115,7 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
 
 
         // 버튼 이벤트
-        Button.setOnClickListener(new Button.OnClickListener() {
+        imageButton.setOnClickListener(new Button.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String str = editText.getText().toString();
