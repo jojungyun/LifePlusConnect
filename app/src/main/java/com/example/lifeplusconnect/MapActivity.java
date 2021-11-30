@@ -82,7 +82,7 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
 
         this.naverMap = naverMap;
         geocoder = new Geocoder(this);
-        //네이버 맵에 locationSource를 셋하면 위치 추적 기능을 사용 할 수 있다
+        //네이버 맵에 locationSource를 set하면 위치 추적 기능을 사용할 수 있다.
         naverMap.setLocationSource(locationSource);
         //위치 추적 모드 지정 가능 내 위치로 이동
         naverMap.setLocationTrackingMode(LocationTrackingMode.Follow);
@@ -148,8 +148,6 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
                     // 마커 추가
                     marker.setMap(naverMap);
 
-                    // 해당 좌표로 화면 줌
-//                naverMap.moveCamera(CameraUpdateFactory.newLatLngZoom(point,15));
 
                     CameraUpdate cameraUpdate = CameraUpdate.scrollTo(point);
                     naverMap.moveCamera(cameraUpdate);
